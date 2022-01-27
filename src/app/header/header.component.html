@@ -1,0 +1,27 @@
+<!--Header compuesto por el título, el logo y la navegación-->
+<header>
+  <div class="media">
+    <div class="container">
+      <div class="title">
+        <!--Título-->
+        <h1>FoodGood</h1>
+      </div>
+      <!--Logo-->
+      <div class="logo">
+        <img src="../../assets/pineapple-g440618a16_640.png" alt="logo">
+      </div>
+    </div>
+  </div>
+  <!--Navegación creada con routerLink, creación de routerLinkActive para que muestre con una clase de css especial  el link que está activo. Con routerLinkActiveOptions hacemos que solo muestre el home activo cuando sea esa ruta exacta ya que si no siempre coincidirá porque todas llevan "/"-->
+  <div class="nav">
+    <nav class="links">
+      <ul>
+        <li><a routerLink="/" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/nutritionalinfo" routerLinkActive="active">Nutritional info</a></li>
+        <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+</header>

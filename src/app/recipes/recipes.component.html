@@ -1,0 +1,42 @@
+<!--Creamos el formulario en el que el usuario introduce el nombre de la receta a buscar-->
+<div class="forms">
+  <form action="#" class="formulario">
+    <label for="titulo" class="titulo">Enter the name of a recipe</label>
+    <input type="text" placeholder="Example: chicken curry" name="ingQuery" [(ngModel)]="ingQuery" autocomplete="off">
+    <!--La función gerRecipe hace una petición http y recoge los datos-->
+    <button (click)="getRecipe()" [ngStyle]="{opacity:titleRecipe.length<=1?0.5:1}">Enviar</button>
+    <!--Creamos una validación con ngIf para que se muestre si no se introducen datos válidos-->
+    <small *ngIf="validator==false; else noError"
+      [ngStyle]="{color:titleRecipe.length<=1?'red':'transparent'}">Introduce el
+      nombre de una
+      receta válida</small>
+    <!--Si no hay error vaciamos el small que habíamos creado para mostrar el error-->
+    <ng-template #noError>
+      <small></small>
+    </ng-template>
+    <!--Usamos una pipe para convertir el título a mayúsculas  y aquí imprimimos la receta-->
+    <h1 *ngIf="validator">{{titleRecipe | uppercase}}</h1>
+    <div class="recipeCards" *ngIf="booleano">
+      <div class="recipeCard">
+
+        <div class="ingredientes">
+
+          <h2>CUISINE TYPE: {{cuisineType}}.</h2>
+          <img src="{{image}}" alt="" />
+        </div>
+        <div class="ingredientes">
+          <h3>Ingredients:</h3>
+          <ul *ngFor="let ing of ingText ;let i=index;">
+            <li>{{ing}}</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+  </form>
+</div>

@@ -1,0 +1,262 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(249, 234, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(249, 234, 160, 1) 0%,
+    rgba(251, 181, 38, 1) 35%,
+    rgba(251, 231, 155, 1) 100%
+  );
+  font-family: "Ultra", serif;
+}
+header {
+  display: flex;
+  width: 100vw;
+  height: auto;
+}
+
+.container {
+  display: flex;
+
+  flex-direction: row;
+
+  margin-top: 0;
+}
+
+.title {
+  margin-left: 1em;
+  color: green;
+  font-family: "Ultra", serif;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px black;
+}
+
+.logo img {
+  margin-left: 1em;
+  width: 5rem;
+}
+
+.nav {
+  display: flex;
+  margin-right: 5rem;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  width: 100vw;
+}
+.links ul {
+  display: flex;
+}
+.links ul li {
+  margin: 0.5rem;
+  list-style-type: none;
+}
+.links ul li a {
+  text-decoration: none;
+  color: rgb(10, 184, 10);
+  font-family: "Ultra", serif;
+  transition: color 0.5s ease-in-out;
+}
+.links ul li a:hover {
+  color: rgb(2, 124, 2);
+}
+@media (max-width: 707px) {
+  .links ul li a {
+    font-size: 10px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo img {
+    display: none;
+  }
+  .title h1 {
+    font-size: 18px;
+    -webkit-text-stroke: 0px black;
+  }
+}
+
+.active {
+  background-color: rgb(248, 236, 123);
+  border-radius: 8%;
+}
+
+.generalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.788);
+  font-weight: 700;
+
+  padding: 2rem;
+
+  font-family: "Laila", sans-serif;
+}
+.generalInfo p {
+  text-align: center;
+  font-weight: bold;
+}
+.generalInfo {
+  text-align: center;
+}
+.generalInfo img {
+  width: 25em;
+}
+
+.generalInfo a {
+  transition: color 0.5s ease-in-out;
+  background-color: none;
+  color: rgb(89, 179, 0);
+}
+.generalInfo a:hover {
+  color: rgba(72, 139, 5, 0.74);
+  cursor: pointer;
+}
+
+.forms {
+  display: flex;
+
+  flex-direction: column;
+}
+.forms #formulario {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.forms .formulario {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.forms .formulario h1 {
+  font-family: "Ultra", serif;
+  letter-spacing: 1px;
+  color: rgb(44, 189, 44);
+  -webkit-text-stroke: 1px black;
+}
+.forms .formulario .titulo {
+  width: 20em;
+  text-align: center;
+}
+.forms .formulario input {
+  margin: 0.5em;
+}
+.forms #formulario {
+  margin-top: 2em;
+}
+.forms #formulario input {
+  margin: 0.5em;
+}
+.forms #formulario #titulo {
+  width: 20em;
+}
+.forms #formulario button {
+  padding: 1em;
+  background-color: rgb(18, 189, 55);
+  border: none;
+  border-radius: 10%;
+  color: #fff;
+  font-family: "Merriweather", serif;
+  transition: all 0.5s ease-in-out;
+}
+.forms #formulario button:hover {
+  cursor: pointer;
+  background-color: rgb(5, 143, 35);
+  color: #000;
+}
+.forms .formulario button {
+  padding: 1em;
+  background-color: rgb(18, 189, 55);
+  border: none;
+  border-radius: 10%;
+  color: #fff;
+  font-family: "Ultra", serif;
+  transition: all 0.5s ease-in-out;
+}
+.forms .formulario button:hover {
+  cursor: pointer;
+  background-color: rgb(5, 143, 35);
+  color: #000;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: auto;
+  font-family: "Merriweather", serif;
+
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.card {
+  display: flex;
+  border-radius: 20px;
+  background-color: rgb(231, 241, 133);
+  padding: 2.5em;
+  width: 20em;
+
+  border: 2px solid#ccc;
+}
+.cards .card ul li {
+  list-style-type: decimal-leading-zero;
+}
+
+.card {
+  width: 15em;
+  font-size: 12px;
+}
+
+.recipeCards {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+
+  align-content: center;
+  align-items: center;
+}
+.recipeCards .recipeCard {
+  display: flex;
+  flex-direction: row;
+  font-family: "Merriweather", serif;
+  width: 30em;
+  height: auto;
+}
+.recipeCards .recipeCard ul {
+  font-size: 10px;
+}
+
+.recipeCards .recipeCard img {
+  width: 15em;
+  height: 15em;
+}
+
+@media (max-width: 507px) {
+  .recipeCards .recipeCard {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    font-family: "Merriweather", serif;
+  }
+  .recipeCards .recipeCard ul {
+    width: 35%;
+    font-size: 24px;
+  }
+
+  .ingredientes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+  }
+}

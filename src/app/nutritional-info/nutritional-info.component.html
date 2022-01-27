@@ -1,0 +1,87 @@
+<!--Formulario en el que introduciremos la cantidad del ingrediente a buscar y utilizaremos two way data binding para que los datos corran a nuestra propiedad fruitName creada en Typescript y viceversa-->
+<div class="forms">
+  <form action="#" #infoForm="ngForm" id="formulario">
+    <label for="titulo">Enter the amount of an ingredient</label>
+    <input type="text" id="titulo" name="fruitName" #fruitname="ngModel" [(ngModel)]="fruitName"
+      placeholder="Example:1 cup of rice" autocomplete="off">
+
+
+    <!--Al botón de envío le añadimos el evento click con una función que hace una petición http por get para pedir los datos de la url-->
+    <button id="boton" (click)="infoFruits()" [disabled]="infoForm.invalid"
+      [ngStyle]="{disabled:infoForm.invalid==true}">Enviar</button>
+
+  </form>
+
+
+  <!--Creamos las tarjetas donde se va a mostrar la información nutricional de los alimentos -->
+  <div class="cards" *ngIf="show==true && error==false">
+
+
+
+    <h3>Nutrients KCal</h3>
+    <div class="card">
+
+
+
+
+      <ul>
+        <li>{{responseInfo.totalNutrientsKCal.CHOCDF_KCAL.label}}:
+          <span style="color:rgb(49, 192, 49)">{{responseInfo.totalNutrientsKCal.CHOCDF_KCAL.quantity}}
+            {{responseInfo.totalNutrientsKCal.CHOCDF_KCAL.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrientsKCal.ENERC_KCAL.label}}:
+          <span style="color:rgb(49, 192, 49)"> {{responseInfo.totalNutrientsKCal.ENERC_KCAL.quantity}}
+            {{responseInfo.totalNutrientsKCal.ENERC_KCAL.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrientsKCal.FAT_KCAL.label}}:
+          <span style="color:rgb(49, 192, 49)">{{responseInfo.totalNutrientsKCal.FAT_KCAL.quantity}}
+            {{responseInfo.totalNutrientsKCal.FAT_KCAL.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrientsKCal.PROCNT_KCAL.label}}:
+          <span style="color:rgb(49, 192, 49)">{{responseInfo.totalNutrientsKCal.PROCNT_KCAL.quantity}}
+            {{responseInfo.totalNutrientsKCal.PROCNT_KCAL.unit}}.</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="cards" *ngIf="show==true &&error==false">
+    <h3>Nutrients</h3>
+    <div class="card">
+
+      <ul>
+        <li>{{responseInfo.totalNutrients.CA.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.CA.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.CA.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.FAT.label}}:
+          <span style="color:rgb(49, 192, 49)"> {{(responseInfo.totalNutrients.FAT.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.FAT.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.FOLAC.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.FOLAC.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.FOLAC.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.PROCNT.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.PROCNT.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.PROCNT.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.ZN.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.ZN.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.ZN.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.P.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.P.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.P.unit}}.</span>
+        </li>
+        <li>{{responseInfo.totalNutrients.FE.label}}:
+          <span style="color:rgb(49, 192, 49)">{{(responseInfo.totalNutrients.FE.quantity).toFixed(2)}}
+            {{responseInfo.totalNutrients.FE.unit}}.</span>
+        </li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</div>
